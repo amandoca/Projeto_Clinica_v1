@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Desafio Dog Lovers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Teste seu conhecimento</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content class="text-justify">
+    Às vezes achamos que conhecemos todos os tipos de raça de cachorro, será mesmo? <br> Clique abaixo e descubra
+    se você saberia de acordo com a imagem qual raça de cachorro é. <br> No final além de confirmar, você ganha pela
+    imagem de um cachorro fofinho. Vamos lá?
+  </ion-card-content>
+</ion-card>
+
+<ion-content>
+  <ion-grid class="ion-align-items-center ion-justify-content-center">
+
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-button (click)="API()">Descubra!</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="imageUrl">
+      <ion-col class="ion-text-center">
+        <img [src]="imageUrl" alt="Dog Image">
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="breed" >
+      <ion-col class="ion-text-center">
+          <ion-input [(ngModel)]="breed"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    
+    
+  </ion-grid>
+</ion-content>

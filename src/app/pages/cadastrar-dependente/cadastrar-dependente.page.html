@@ -1,0 +1,88 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Cadastrar Dependente</ion-title>
+
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding">
+    <ion-list>
+        <h3 style="text-align: center;">Dados do Dependente</h3>
+        <ion-item>
+            <ion-label position="floating"> Nome Completo</ion-label>
+            <ion-input [(ngModel)]="nome"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>CPF</ion-label>
+            <ion-input [(ngModel)]="cpf_cnpj" (keyup)="cpf_cnpj=format(cpf_cnpj)" name="cpf_cnpj" maxlength="14" ngModel></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Nascimento</ion-label><br>
+            <ion-input type="date" [(ngModel)]="datanasc"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Grau de Parentesco</ion-label>
+            <ion-select [(ngModel)]="parentesco">
+                <ion-select-option value="pai ou mãe">pai ou mãe</ion-select-option>
+                <ion-select-option value="avô ou avó">avô ou avó</ion-select-option>
+                <ion-select-option value="bisavô ou bisavó">bisavô ou bisavó</ion-select-option>
+                <ion-select-option value="filho ou filha">filho ou filha</ion-select-option>
+                <ion-select-option value="neto ou neta">neto ou neta</ion-select-option>
+                <ion-select-option value="bisneto ou bisneta">bisneto ou bisneta</ion-select-option>
+                <ion-select-option value="irmão ou irmã">irmão ou irmã</ion-select-option>
+                <ion-select-option value="tio ou tia">tio ou tia</ion-select-option>
+                <ion-select-option value="sobrinho ou sobrinha">sobrinho ou sobrinha</ion-select-option>
+            </ion-select>
+        </ion-item>
+
+        <ion-item>
+            <ion-label>Gênero</ion-label>
+            <ion-select [(ngModel)]="genero">
+                <ion-select-option value="masculino">Masculino</ion-select-option>
+                <ion-select-option value="feminino">Feminino</ion-select-option>
+                <ion-select-option value="outro">Outro</ion-select-option>
+            </ion-select>
+        </ion-item>
+        <br>
+        <h3 style="text-align: center;">Endereço do Dependente</h3>
+        <ion-item>
+            <ion-label position="floating">CEP</ion-label>
+            <ion-input [(ngModel)]="cep" (ionBlur)="callAPI()" placeholder="Digite seu CEP"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Endereço</ion-label>
+            <ion-input [(ngModel)]="endereco"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Número</ion-label>
+            <ion-input type="number" [(ngModel)]="numero"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Complemento</ion-label>
+            <ion-input [(ngModel)]="complemento"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Bairro</ion-label>
+            <ion-input [(ngModel)]="bairro"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Cidade</ion-label>
+            <ion-input [(ngModel)]="cidade"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label position="floating">Estado</ion-label>
+            <ion-input [(ngModel)]="estado"></ion-input>
+        </ion-item>
+        <br>
+        <ion-button expand="block" (click)="save()" color="success">Cadastrar</ion-button>
+    </ion-list>
+</ion-content>

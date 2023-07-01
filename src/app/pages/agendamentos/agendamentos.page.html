@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Consultas agendadas</ion-title>
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-icon name="arrow-back"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <ion-img src="../../../assets/icon/calendario.png" style="margin-top: 20px; width: 187px; margin-left: auto; margin-right: auto;"></ion-img>
+    <br>
+    <ion-list>
+        <ion-item-sliding *ngFor="let item of profissionais">
+            <ion-item>
+                <ion-text>
+                    <h3>Paciente: {{item.paciente}}</h3>
+                    <p>Data e Horário: {{item.selectedDateTime | date: "d MMM, yyyy, hh:mm"}}</p>
+                    <p>Dentista: Dr. {{item.dentista}}</p>
+                    <p>Procedimento: {{item.procedimento}}</p>
+                </ion-text>
+            </ion-item>
+            <ion-item-options>
+                <ion-item-option color="danger" (click)="deletar(item)">Deletar</ion-item-option>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+
+    <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+        <ion-fab-button size="small" (click)="exibeCadastro()">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>{{ title }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button *ngIf="backButton" default-href="#"></ion-back-button>
+      <ion-menu-button *ngIf="menuButton" auto-hide="false"></ion-menu-button>
+    </ion-buttons>
+
+
+    <ion-buttons slot="end">
+      <ion-button (click)="alguemMeClicou()">
+        <ion-icon slot="start" name="star"></ion-icon>
+      </ion-button>
+
+    </ion-buttons>
+  
+    </ion-toolbar>
+</ion-header>
+

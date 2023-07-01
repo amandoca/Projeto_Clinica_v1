@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de Produtos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let prod of produtos">
+      <ion-text>
+        <h2>{{prod.marca}}</h2>
+        <p>{{prod.categoria}} - {{prod.preco}}</p>
+
+      </ion-text>
+    </ion-item>
+    </ion-list>
+</ion-content>
